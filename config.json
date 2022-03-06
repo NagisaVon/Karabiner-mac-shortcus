@@ -1,0 +1,33 @@
+{
+    "title": "Mac mouse button with rectangle move between monitor ",
+    "rules": [
+      {
+        "description": "Mouse 5+Mouse 1 to left monitor",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "simultaneous": [
+                {
+                  "pointing_button": "button5"
+                }
+              ],
+              "pointing_button": "button1"
+            },
+            "to": [
+              {
+                "repeat": false,
+                "lazy": true,
+                "key_code": "left_arrow",
+                "modifiers": [
+                  "left_control",
+                  "left_alt",
+                  "left_gui"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
