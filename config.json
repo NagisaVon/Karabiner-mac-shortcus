@@ -1,33 +1,101 @@
 {
-    "title": "Mac mouse button with rectangle move between monitor ",
-    "rules": [
-      {
-        "description": "Mouse 5+Mouse 1 to left monitor",
-        "manipulators": [
-          {
-            "type": "basic",
-            "from": {
-              "simultaneous": [
-                {
-                  "pointing_button": "button5"
-                }
-              ],
-              "pointing_button": "button1"
-            },
-            "to": [
-              {
-                "repeat": false,
-                "lazy": true,
-                "key_code": "left_arrow",
-                "modifiers": [
-                  "left_control",
-                  "left_alt",
-                  "left_gui"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "title": "Mac mouse button customization with rectangle",
+  "rules": [
+    {
+      "description": "Mouse 4 Switch Right",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to_if_alone": [
+            {
+              "repeat": false,
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Mouse 5 Switch Left",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5"
+          },
+          "to_if_alone": [
+            {
+              "repeat": false,
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Command + Mouse 5 to left monitor",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5",
+            "modifiers": {
+              "mandatory": [
+                "left_gui"
+              ]
+            }
+          },
+          "to": [
+            {
+              "repeat": false,
+              "lazy": false,
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_control",
+                "left_alt",
+                "left_gui"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Command + Mouse 4 to right monitor",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4",
+            "modifiers": {
+              "mandatory": [
+                "left_gui"
+              ]
+            }
+          },
+          "to": [
+            {
+              "repeat": false,
+              "lazy": false,
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_control",
+                "left_alt",
+                "left_gui"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
